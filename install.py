@@ -4,24 +4,24 @@ import Network.Whois
 import argparse
 
 os.system('clear')
-print('установка модулей')
+print('installation of modules')
 time.sleep(5)
 os.system('pip install pysqlite3')
 os.system('clear')
 time.sleep(1)
 os.system('clear')
-print('установка модулей произошла успешно')
+print('the modules were installed successfully')
 
 import sqlite3
 
-print('создание db') 
+print('creating a db') 
 conn = sqlite3.connect("db.db")
 cursor = conn.cursor()
 
 ip = Network.Whois.MyIp()
 
 
-print('Создание таблицы')
+print('Creating a table')
 
 cursor.execute("""CREATE TABLE profile
                   (ip text, username text, password text, port text)
@@ -40,5 +40,5 @@ cursor.execute("""INSERT INTO profile
 conn.commit()
 conn.close()
 
-print('установка прошла успешно')
-print('используй python GEN.py')
+print('installation was successful')
+print('use python GEN.py')
